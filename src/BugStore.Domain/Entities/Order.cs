@@ -9,5 +9,6 @@ public class Order
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
 
-    public List<OrderLine> Lines { get; set; } = null;
+    public List<OrderLine> Lines { get; set; } = [];
+    public decimal Total => Lines.Sum(l => l.Total);
 }
